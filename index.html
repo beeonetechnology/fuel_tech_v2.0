@@ -2040,7 +2040,7 @@
             top: 0;
             left: 0;
         } */
-        .carousel-title {
+        /* .carousel-title {
             position: absolute;
             font-size: 3rem;
             top: 25%;
@@ -2052,14 +2052,43 @@
 
         .carousel-desc {
             position: absolute;
-            top: 30%;
+            font-size: 3rem;
+            top: 25%;
             left: 10%;
-            font-size: 2rem;
-            display: inline-block;
             opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        .carousel-desc span {
+            display: inline-block;
+            transform: translateY(-50px);
+            opacity: 0;
+            animation: letterSlideDown 0.5s ease-out forwards;
+        } */
+
+        .carousel-title {
+            position: absolute;
+            font-size: 4rem;
+            top: 30%;
+            /* Adjusted for better positioning */
+            left: 10%;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideDown 1s ease-out forwards;
         }
 
         .carousel-desc {
+            position: absolute;
+            font-size: 3rem;
+            /* Smaller font for description */
+            top: 37%;
+            /* Adjusted to avoid overlap */
+            left: 10%;
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        .carousel-desc span {
             display: inline-block;
             transform: translateY(-50px);
             opacity: 0;
@@ -2067,6 +2096,36 @@
         }
 
         @keyframes slideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes letterSlideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .typewriter-animation {
+            animation:
+                typewriter 5s steps(50) 1s 1 normal both,
+                blinkingCursor 500ms steps(50) infinite normal;
+        }
+
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        /* @keyframes slideDown {
             from {
                 transform: translateY(-50px);
                 opacity: 0;
@@ -2088,7 +2147,7 @@
                 transform: translateY(0);
                 opacity: 1;
             }
-        }
+        } */
 
         @keyframes fadeOut {
             from {
@@ -2229,6 +2288,28 @@
         .bounce {
             animation: bounce 0.5s forwards;
         }
+
+
+        @media only screen and (max-width: 768px) {
+            .carousel-title {
+                visibility: hidden;
+            }
+
+            .carousel-desc {
+                position: absolute;
+                font-size: 1rem;
+                /* Smaller font for description */
+                top: 35%;
+                /* Adjusted to avoid overlap */
+                left: 5%;
+                opacity: 0;
+                transform: translateY(-50px);
+                width: 140px;
+                /* Adjust width based on your character limit */
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+        }
     </style><noscript>
         <style>
             .wpb_animate_when_almost_visible {
@@ -2251,6 +2332,8 @@
             padding-top: 20px;
         }
     </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <style id="latheme_custom_css_xlg" media="screen and (min-width:1824px)"></style>
     <style id="latheme_custom_css_md" media="screen and (max-width:1199px)"></style>
     <style id="latheme_custom_css_sm" media="screen and (max-width:991px)"></style>
@@ -2281,16 +2364,12 @@
         <div class="site-inner">
             <aside id="header_aside" class="header--aside">
                 <div class="header-aside-wrapper">
-                    <a class="btn-aside-toggle" href="#"><i class="pisces-icon-simple-remove"></i></a>
+                    <a class="btn-aside-toggle" href="#"><i class="fa-solid fa-xmark" style="color: #000000;"></i></a>
                     <div class="header-aside-inner">
                         <div class="header-widget-bottom">
                             <div id="text-2" class="widget widget_text">
-                                <h3 class="widget-title"><span>VFM Innova Refinaries</span></h3>
-                                <div class="textwidget">Our
-                                    system house at VFM INNOVA Specialty Chemicals manufactures various
-                                    rigid polyurethane systems. An advanced PLC &amp; SCADA-HMI system
-                                    monitors and controls the production process that empowers a
-                                    high-quality product.</div>
+                                <h3 class="widget-title"><span>FUEL TECH</span></h3>
+                                <div class="textwidget">Powering the Future With New Technology</div>
                             </div>
                             <div id="custom_html-2" class="widget_text margin-bottom-50 widget widget_custom_html">
                                 <div class="textwidget custom-html-widget">
@@ -2305,9 +2384,9 @@
                             <div id="contact_info-1" class="margin-bottom-50 widget widget_contact_info">
                                 <h3 class="widget-title"><span>Contact VFM Innova</span></h3>
                                 <div class="la-contact-info">
-                                    <div class="la-contact-item la-contact-phone"><span>+91 800 800 5167</span></div>
+                                    <div class="la-contact-item la-contact-phone"><span> +966 59 282 5977</span></div>
                                     <div class="la-contact-item la-contact-email">
-                                        <span>info@vfminnovarefineries.com</span>
+                                        <span>info@fueltechksa.com</span>
                                     </div>
                                 </div>
                             </div>
@@ -2338,11 +2417,10 @@
                                 <div class="header-component-outer header-left">
                                     <div class="site-branding">
                                         <a href="http://www.vfminnovarefineries.com/" rel="home">
-                                            <figure class="logo--normal"><img src="img/logo.png"
-                                                    alt="VFM INNOVA REFINERIES"
+                                            <figure class="logo--normal"><img src="img/logo.png" alt="FUEL TECH"
                                                     srcset="index_files/innova_favico.png 2x"></figure>
-                                            <figure class="logo--transparency"><img src="img/logo.png"
-                                                    alt="VFM INNOVA REFINERIES" srcset="img/logo.png 2x"></figure>
+                                            <figure class="logo--transparency"><img src="img/logo.png" alt="FUEL TECH"
+                                                    srcset="img/logo.png 2x"></figure>
                                         </a>
                                     </div>
                                 </div>
@@ -2352,19 +2430,18 @@
                                             <ul id="menu-primary-navigation" class="main-menu mega-menu">
                                                 <li
                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2398 current_page_item mm-item active mm-popup-narrow mm-item-level-0 menu-item-2476">
-                                                    <a href="http://www.vfminnovarefineries.com/"><span
-                                                            class="mm-text"><i class="fa fa-home"></i></span></a>
+                                                    <a href="index.html"><span class="mm-text"><i
+                                                                class="fa fa-home"></i></span></a>
                                                 </li>
                                                 <li
                                                     class="menu-item menu-item-type-post_type menu-item-object-page mm-item mm-popup-narrow mm-item-level-0 menu-item-2474">
-                                                    <a href="http://www.vfminnovarefineries.com/business-verticals/"><span
-                                                            class="mm-text">Business Verticals</span></a>
+                                                    <a href="business-verticals.html"><span class="mm-text">Business
+                                                            Verticals</span></a>
                                                 </li>
                                                 <li
                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mm-item mm-item-has-sub mm-popup-narrow mm-item-level-0 menu-item-1637">
-                                                    <a href="http://www.vfminnovarefineries.com/about-us/"><span
-                                                            class="mm-text">About Us</span></a>
-                                                    <div class="popup">
+                                                    <a href="about.html"><span class="mm-text">About Us</span></a>
+                                                    <!-- <div class="popup">
                                                         <div class="inner">
                                                             <ul class="sub-menu">
                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page mm-item mm-item-level-1 menu-item-2301"
@@ -2377,24 +2454,23 @@
                                                                             class="mm-text">Careers</span></a></li>
                                                             </ul>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </li>
-                                                <li
+                                                <!-- <li
                                                     class="menu-item menu-item-type-post_type menu-item-object-page mm-item mm-popup-narrow mm-item-level-0 menu-item-2385">
-                                                    <a href="http://www.vfminnovarefineries.com/media-gallery/"><span
+                                                    <a href="gallery.html"><span
                                                             class="mm-text">Media &amp; Gallery</span></a>
-                                                </li>
+                                                </li> -->
                                                 <li
                                                     class="menu-item menu-item-type-post_type menu-item-object-page mm-item mm-popup-narrow mm-item-level-0 menu-item-1641">
-                                                    <a href="http://www.vfminnovarefineries.com/contact-us/"><span
-                                                            class="mm-text">Contact Us</span></a>
+                                                    <a href="contact.html"><span class="mm-text">Contact Us</span></a>
                                                 </li>
                                             </ul>
                                         </nav>
                                         <div
                                             class="header_component header_component--link la_compt_iem la_com_action--aside_header ">
                                             <a rel="nofollow" class="component-target" href="javascript:;"><i
-                                                    class="pisces-icon-menu"></i></a>
+                                                    class="fa fa-bars-staggered"></i></a>
                                         </div>
                                         <div
                                             class="header_component header_component--searchbox la_compt_iem la_com_action--searchbox searchbox__01 ">
@@ -2410,22 +2486,19 @@
                 </div>
             </header>
             <!-- #masthead -->
-            <div class="site-header-mobile" style="">
+            <div class="site-header-mobile">
                 <div class="site-header-outer">
                     <div class="site-header-inner">
                         <div class="container">
                             <div class="header-main clearfix">
                                 <div class="header-component-outer header-component-outer_logo">
                                     <div class="site-branding">
-                                        <a href="http://www.vfminnovarefineries.com/" rel="home">
-                                            <figure class="logo--normal"><img
-                                                    src="index_files/logo-vfm-innova-refineries.png"
+                                        <a href="index.html" rel="home">
+                                            <figure class="logo--normal"><img src="img/logo.png"
                                                     alt="VFM INNOVA REFINERIES"
                                                     srcset="index_files/logo-vfm-innova-refineries.png 2x"></figure>
-                                            <figure class="logo--transparency"><img
-                                                    src="index_files/logo-vfm-innova-refineries.png"
-                                                    alt="VFM INNOVA REFINERIES"
-                                                    srcset="index_files/logo-vfm-innova-refineries.png 2x"></figure>
+                                            <figure class="logo--transparency"><img src="img/logo.png"
+                                                    alt="VFM INNOVA REFINERIES" srcset="img/logo.png 2x"></figure>
                                         </a>
                                     </div>
                                 </div>
@@ -2452,18 +2525,17 @@
                                 <ul class="dl-menu dl-menuopen">
                                     <li id="menu-item-2476"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2398 current_page_item menu-item-2476">
-                                        <a href="http://www.vfminnovarefineries.com/" aria-current="page"><i
-                                                class="fa fa-home"></i></a>
+                                        <a href="index.html" aria-current="page"><i class="fa fa-home"></i></a>
                                     </li>
                                     <li id="menu-item-2474"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2474">
-                                        <a href="http://www.vfminnovarefineries.com/business-verticals/">Business
+                                        <a href="business-verticals.html">Business
                                             Verticals</a>
                                     </li>
                                     <li id="menu-item-1637"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1637">
-                                        <a href="http://www.vfminnovarefineries.com/about-us/">About Us</a>
-                                        <ul class="sub-menu dl-submenu">
+                                        <a href="about.html">About Us</a>
+                                        <!-- <ul class="sub-menu dl-submenu">
                                             <li class="dl-back"><a href="#">Back</a></li>
                                             <li id="menu-item-2301"
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2301">
@@ -2473,16 +2545,16 @@
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2266">
                                                 <a href="http://www.vfminnovarefineries.com/careers/">Careers</a>
                                             </li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
-                                    <li id="menu-item-2385"
+                                    <!-- <li id="menu-item-2385"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2385">
                                         <a href="http://www.vfminnovarefineries.com/media-gallery/">Media &amp;
                                             Gallery</a>
-                                    </li>
+                                    </li> -->
                                     <li id="menu-item-1641"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1641">
-                                        <a href="http://www.vfminnovarefineries.com/contact-us/">Contact Us</a>
+                                        <a href="contact.html">Contact Us</a>
                                     </li>
                                 </ul>
                             </div>
@@ -2513,28 +2585,34 @@
                                                                 <div class="carousel">
                                                                     <div class="carousel-slides">
                                                                         <div class="slide active">
-                                                                            <img class="carousel-img" src="img/4.jpg"
-                                                                                alt="Slide 1">
-                                                                            <h2 class="carousel-title">Welcome to Our
-                                                                                Website</h2>
-                                                                            <p class="carousel-desc">Your journey starts
-                                                                                here.</p>
+                                                                            <img class="carousel-img"
+                                                                                src="img/banner 3.jpg" alt="Slide 1">
+                                                                            <h2 class="carousel-title">FUEL TECH</h2>
+                                                                            <p class="carousel-desc"
+                                                                                data-text="Powering the Future With New Technology.">
+                                                                                <!-- Your journey starts here. -->
+                                                                            </p>
                                                                         </div>
                                                                         <div class="slide">
-                                                                            <img class="carousel-img" src="img/5.jpg"
-                                                                                alt="Slide 2">
-                                                                            <h2 class="carousel-title">Discover Our
-                                                                                Services</h2>
-                                                                            <p class="carousel-desc">We offer a variety
-                                                                                of solutions.</p>
+                                                                            <img class="carousel-img"
+                                                                                src="img/banner 2.jpg" alt="Slide 2">
+                                                                            <h2
+                                                                                class="carousel-title typewriter-animation">
+                                                                                FUEL TECH</h2>
+                                                                            <p class="carousel-desc"
+                                                                                data-text="Powering the Future With New Technology.">
+                                                                            </p>
                                                                         </div>
                                                                         <div class="slide">
-                                                                            <img class="carousel-img" src="img/6.jpg"
-                                                                                alt="Slide 3">
-                                                                            <h2 class="carousel-title">Contact Us Today
+                                                                            <img class="carousel-img"
+                                                                                src="img/banner 4.jpg" alt="Slide 3">
+                                                                            <h2
+                                                                                class="carousel-title typewriter-animation">
+                                                                                FUEL TECH
                                                                             </h2>
-                                                                            <p class="carousel-desc">We're here to help
-                                                                                you.</p>
+                                                                            <p class="carousel-desc "
+                                                                                data-text="Powering the Future With New Technology.">
+                                                                            </p>
                                                                         </div>
                                                                     </div>
                                                                     <!-- <div class="animation-name">Animation: <span
@@ -2698,9 +2776,7 @@
                                                                             specialty chemicals with an
                                                                             unwavering commitment to balancing economic
                                                                             gains with long-term
-                                                                            stewardship of the environment and
-                                                                            communities in which VFM INNOVA
-                                                                            operates.</p>
+                                                                            stewardship of the environment.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2756,7 +2832,7 @@
                                                                             class="vc_single_image-wrapper   vc_box_border_grey">
                                                                             <img loading="lazy" decoding="async"
                                                                                 width="704" height="669"
-                                                                                src="index_files/1M2-HOMEedit.png"
+                                                                                src="img/Asset 2@4x.png"
                                                                                 class="vc_single_image-img attachment-full"
                                                                                 alt="" title="1M2-HOMEedit">
                                                                         </div>
@@ -2787,7 +2863,7 @@
                                                                             class="vc_single_image-wrapper   vc_box_border_grey">
                                                                             <img loading="lazy" decoding="async"
                                                                                 width="716" height="669"
-                                                                                src="index_files/M2-HOME03edit.png"
+                                                                                src="img/Asset 3@4x(2).png"
                                                                                 class="vc_single_image-img attachment-full"
                                                                                 alt="" title="M2-HOME03edit">
                                                                         </div>
@@ -2811,18 +2887,24 @@
                                                                         style="">Business Verticals</h2>
                                                                     <div class="js-el subheading-tag la-unit-responsive"
                                                                         style="">
-                                                                        <p>From
-                                                                            its humble beginnings as a fuel trading
-                                                                            company a decade ago, VFM
-                                                                            INNOVA has evolved into a regional
-                                                                            powerhouse in the petroleum and
-                                                                            petrochemicals vertical with a geographical
-                                                                            footprint across 7
-                                                                            countries. Our ecosystem of stand-alone
-                                                                            businesses have been designed to
-                                                                            complement one another, creating a
-                                                                            comprehensive suite of end-to-end
-                                                                            solutions for our customers.</p>
+                                                                        <p>Since our inception in 2015, we have been on
+                                                                            a journey of organic expansion and strategic
+                                                                            market positioning. In 2024, we embarked on
+                                                                            a groundbreaking project to establish a
+                                                                            Re-refining of petroleum products (mainly
+                                                                            pyrolysis & aromatic hydrocarbons) and
+                                                                            recycling of chemical, solvent and
+                                                                            dehydration of glycol aimed at enhancing our
+                                                                            production capabilities and storage
+                                                                            efficiency. This new plant, with a sizeable
+                                                                            production capacity of 200 barrels per day,
+                                                                            reinforces our commitment to meeting the
+                                                                            dynamic market demands with a steady and
+                                                                            reliable output. The facility will also
+                                                                            feature an extensive storage capacity of
+                                                                            8,000 cubic meters (CBM), ensuring optimal
+                                                                            inventory management and enhanced reserves.
+                                                                        </p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2881,17 +2963,14 @@
                                                                         style="">Sustainability</h2>
                                                                     <div class="js-el subheading-tag la-unit-responsive"
                                                                         style="">
-                                                                        <p>Quite
-                                                                            simply, sustainability makes good business
-                                                                            sense. From continuously
-                                                                            improving operational efficiency and the
-                                                                            environmental performance of
-                                                                            our facilities, to zero water wastage
-                                                                            solutions, and strategically
-                                                                            investing for growth, we view sustainable
-                                                                            practices as the best way to
-                                                                            ensure our business remains viable for the
-                                                                            long term.</p>
+                                                                        <p>Sustainable practices and continuous
+                                                                            improvement initiatives minimize the plant's
+                                                                            environmental impact.
+                                                                            Advanced treatment and containment measures
+                                                                            limit the release of harmful air pollutants.
+                                                                            Minimizing the disposal of chemical waste
+                                                                            through reprocessing and recovery.
+                                                                        </p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2947,7 +3026,7 @@
                                                                             class="vc_single_image-wrapper   vc_box_border_grey">
                                                                             <img loading="lazy" decoding="async"
                                                                                 width="463" height="351"
-                                                                                src="index_files/777.png"
+                                                                                src="img/Asset 4@4x.png"
                                                                                 class="vc_single_image-img attachment-full"
                                                                                 alt="" title="777">
                                                                         </div>
@@ -2992,12 +3071,11 @@
                             <div class="footer-column footer-column-1 col-xs-12 col-sm-6 col-md-3">
                                 <div id="custom_html-5" class="widget_text widget widget_custom_html">
                                     <div class="widget_text widget-inner">
-                                        <h3 class="widget-title"><span>About VFM Innova Refineries</span></h3>
+                                        <h3 class="widget-title"><span>About FUEL TECH</span></h3>
                                         <div class="textwidget custom-html-widget">
-                                            <p class="padding-top-5" style="color:#fff">Incepted
-                                                in 2010 as Trotters FZE, a trading company dealing in petroleum and
-                                                petrochemicals products in the GCC, VFM INNOVA Refining &amp; Trading
-                                                has grown to be a frontrunner in the sector</p>
+                                            <p class="padding-top-5" style="color:#fff"> We operate Petroleum
+                                                Re-Refining Unit, located in Second Industrial city, Dammam, Saudi
+                                                Arabia boasts a monthly production capacity of 5000 MT.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3019,7 +3097,7 @@
                             </div>
                             <div class="footer-column footer-column-2 col-xs-12 col-sm-3 col-md-2">
                                 <div id="nav_menu-3" class="font-size-14 widget widget_nav_menu">
-                                    <div class="widget-inner">
+                                    <!-- <div class="widget-inner">
                                         <h3 class="widget-title"><span>BUSINESS VERTICALS</span></h3>
                                         <div class="menu-business-verticals-container">
                                             <ul id="menu-business-verticals" class="menu">
@@ -3054,7 +3132,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="footer-column footer-column-3 col-xs-12 col-sm-3 col-md-2">
@@ -3065,14 +3143,17 @@
                                             <ul id="menu-footer-company" class="menu">
                                                 <li id="menu-item-2276"
                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2276">
-                                                    <a
-                                                        href="http://www.vfminnovarefineries.com/business-verticals/">Home</a>
+                                                    <a href="index.html">Home</a>
                                                 </li>
                                                 <li id="menu-item-1843"
                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1843">
-                                                    <a href="http://www.vfminnovarefineries.com/about-us/">About Us</a>
+                                                    <a href="about.html">About Us</a>
                                                 </li>
-                                                <li id="menu-item-2186"
+                                                <li id="menu-item-1843"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1843">
+                                                    <a href="business-verticals.html">Business Verticals</a>
+                                                </li>
+                                                <!-- <li id="menu-item-2186"
                                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2186">
                                                     <a href="http://vfminnovarefineries.com/management/">Management</a>
                                                 </li>
@@ -3080,14 +3161,14 @@
                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2396">
                                                     <a href="http://www.vfminnovarefineries.com/media-gallery/">Media
                                                         &amp; Gallery</a>
-                                                </li>
-                                                <li id="menu-item-2187"
+                                                </li> -->
+                                                <!-- <li id="menu-item-2187"
                                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2187">
                                                     <a href="http://vfminnovarefineries.com/careers/">Careers</a>
-                                                </li>
+                                                </li> -->
                                                 <li id="menu-item-2397"
                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2397">
-                                                    <a href="http://www.vfminnovarefineries.com/contact-us/">Contact
+                                                    <a href="contact.html">Contact
                                                         Us</a>
                                                 </li>
                                             </ul>
@@ -3103,7 +3184,7 @@
                                             <ul id="menu-footer-support" class="menu">
                                                 <li id="menu-item-2479"
                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2479">
-                                                    <a href="http://www.vfminnovarefineries.com/contact-us/">Contact
+                                                    <a href="contact.html">Contact
                                                         Us</a>
                                                 </li>
                                                 <li id="menu-item-2189"
@@ -3123,21 +3204,21 @@
                                 <div id="media_image-2" class="widget widget_media_image">
                                     <div class="widget-inner">
                                         <h3 class="widget-title"><span>CONTACT US</span></h3><img width="1024"
-                                            height="348" src="index_files/logo-vfm-innova-refineries-white.png"
+                                            height="348" src="img/white_logo.png"
                                             class="image wp-image-2288  attachment-full size-full" alt=""
                                             style="max-width: 100%; height: auto;" decoding="async" loading="lazy"
-                                            srcset="index_files/logo-vfm-innova-refineries-white.png 1024w, index_files/logo-vfm-innova-refineries-white-768x261.png 768w"
+                                            srcset="img/white_logo.png 1024w, img/white_logo.png 768w"
                                             sizes="auto, (max-width: 1024px) 100vw, 1024px">
                                     </div>
                                 </div>
                                 <div id="custom_html-7" class="widget_text widget widget_custom_html">
                                     <div class="widget_text widget-inner">
                                         <div class="textwidget custom-html-widget"><i class="fa fa-envelope"></i> <a
-                                                href="mailto:info@vfminnovarefineries.com">info@vfminnovarefineries.com</a><br>
+                                                href="mailto:info@fueltechksa.com">info@fueltechksa.com</a><br>
                                             <i class="fa fa-globe"></i> <a
                                                 href="http://www.vfminnovarefineries.com/contact-us">Location</a>
                                             <br>
-                                            <i class="fa fa-phone"></i> Toll Free: +971 600 588063<br>
+                                            <i class="fa fa-phone"></i> Contact: +966 59 282 5977<br>
                                         </div>
                                     </div>
                                 </div>
@@ -3149,9 +3230,9 @@
                     <div class="container">
                         <div class="footer-bottom-inner">
                             <div class="row">
-                                <div class="col-xs-12 text-center" style="color:#fff;">© VFM Innova Refineries. All
-                                    Right Reserved 2022. Powered By <a href="https://wwww.virtu.co/"
-                                        style="color:#fff;">Virtu.co</a></div>
+                                <div class="col-xs-12 text-center" style="color:#fff;">© Fuel Tech. All
+                                    Right Reserved 2024. Powered By <a href="https://beeonedigital.com/"
+                                        style="color:#fff;">Beeone Digital</a></div>
                             </div>
                         </div>
                     </div>
@@ -3547,7 +3628,7 @@
             // Trigger text animation after slide transition
             setTimeout(() => {
                 slides.forEach(slide => slide.classList.remove(currentAnimationOut, nextAnimationIn));
-                animateText(slides[currentSlide]);
+                animateText(slides[currentSlide]); // Reinitialize text animation
             }, 500); // Match the duration of the slide animation
         }
 
@@ -3577,7 +3658,8 @@
 
             // Slide-in animation for title
             title.style.animation = "slideDown 1s ease-out forwards";
-
+            desc.style.animation = "slideDown 1s ease-out forwards";
+            void title.offsetWidth; // Trigger reflow
             // Preserve original text using data attribute
             const text = desc.dataset.text || desc.textContent;
             desc.dataset.text = text; // Save if not already saved
@@ -3586,13 +3668,20 @@
             desc.innerHTML = ""; // Clear previous animation
 
             // Animate each letter directly in the innerHTML
-            let animatedText = "";
             [...text].forEach((char, i) => {
                 const delay = i * 0.1; // Calculate delay for each letter
-                animatedText += `<span style="display:inline-block;animation:letterSlideDown 0.5s ease-out forwards ${delay}s">${char}</span>`;
+
+                if (char === " ") {
+                    // Handle spaces explicitly
+                    desc.innerHTML += `<span style="display:inline-block;width:0.5em;">&nbsp;</span>`;
+                } else {
+                    // Regular characters with animation
+                    desc.innerHTML += `<span style="animation-delay:${delay}s;display:inline-block;">${char}</span>`;
+                }
             });
 
-            desc.innerHTML = animatedText;
+            // Show description during animation
+            desc.style.opacity = "1";
 
             // Hide text after animation completes
             setTimeout(() => {
@@ -3605,6 +3694,7 @@
         // Initialize animations for the first slide
         animateText(slides[0]);
     </script>
+
 
     <script>
         if (typeof revslider_showDoubleJqueryError === "undefined") { function revslider_showDoubleJqueryError(sliderID) { console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion."); console.log("To fix this, you can:"); console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on"); console.log("2. Find the double jQuery.js inclusion and remove it"); return "Double Included jQuery Library"; } }
